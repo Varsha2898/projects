@@ -1,0 +1,87 @@
+﻿
+@model FinalBill.Models.Patient
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+            background-color: aliceblue;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+
+        body {
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover;
+        }
+    </style>
+</head>
+<body background="~/Content/images/bg1.jpg">
+    <div id="login-div">
+        @using (Html.BeginForm("Index", "Patient", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td></td>
+                    <td style="text-decoration:underline">Patient Login</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.User_Id)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.User_Id)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.User_Id)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(model => model.Password)</td>
+                    <td>@Html.PasswordFor(model => model.Password)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="name" value="Login" />
+                        <input type="reset" name="name" value="Clear" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href='@Url.Action("HomeView1", "Home")'>Back To Home</a>
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+﻿@model FinalBill.Models.Service
+@{
+    ViewBag.Title = "Index1";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <Title>Index</Title>
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Index1", "Home", FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <td></td>
+                <td style="text-decoration:none;font-size:30px">Service Billing</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.PatientId)
+                </td>
+                <td col-md-10>
+                    @Html.EditorFor(model => model.PatientId)
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.ServiceName)
+                </td>
+                <td col-md-10>
+                    @Html.DropDownListFor(model => model.ServiceName, new SelectList(ViewBag.data, "ServiceName", "ServiceName"), "Select")
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.ServiceName)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Cost)</td>
+                <td col-md-10>@Html.EditorFor(model => model.Cost)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.Cost)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn-primary" type="submit" name="name" value="Submit" />
+                    <input class="btn-default" type="reset" name="name" value="Clear" />
+                </td>
+            </tr>
+
+        </table>}
+    </div>
+</body>
+</html>
+
+

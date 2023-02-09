@@ -1,0 +1,35 @@
+﻿
+@{
+    
+    if (Session["userId"] == null)
+    {
+        Response.Redirect("~/Admin/Index");
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+</head>
+<body>
+    <div>
+
+        <div class="container-fluid text-center " style="margin:0 ; width:auto">
+            <h1>Welcome User!</h1>
+            
+            <button style="float:right" type="button" onclick="location.href='@Url.Action("LogOut", "Patient")'" class="btn btn-sm btn-danger">LogOut</button>
+        </div>
+
+        
+        <button type="button" onclick="location.href='@Url.Action("Index11", "Patient")'" class="btn btn-group-lg btn-primary">View Bill</button><br /><br />
+       
+        
+    </div>
+</body>
+</html>
+
+
+

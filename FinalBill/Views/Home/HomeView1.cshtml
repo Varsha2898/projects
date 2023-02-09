@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .dropbtn {
+            background-color:dimgrey;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            cursor:pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body background="~/Content/images/bg1.jpg" height="100%" width="100%">
+
+    <div class="container-fluid text-center " style="margin:0 ; width:auto">
+        <h1>Billing Management for Hospital</h1>
+    </div>
+    
+    <div style="float:right">
+
+        <div class="dropdown" >
+            <button class="dropbtn">
+                Register
+            </button>
+            <div class="dropdown-content">
+                <a onclick="location.href='@Url.Action("PatientReg", "patient")'">User</a>
+                <a onclick="location.href='@Url.Action("StaffReg", "Staff")'">Staff</a>
+            </div>
+        </div>
+        <div class="dropdown" style="margin-left:30px">
+            <button class="dropbtn">
+                Login
+            </button>
+            <div class="dropdown-content">
+                <a onclick="location.href='@Url.Action("Index", "patient")'">User</a>
+                <a onclick="location.href='@Url.Action("Index", "Staff")'">Staff</a>
+                <a onclick="location.href='@Url.Action("Index", "Admin")'">Admin</a>
+            </div>
+        </div>
+    </div>
+    
+    <div style="float:right;padding-top:170px;font-family:cursive;font-size:50px">
+        <h2>"Take care of your body,</h2>
+        <h2>It's the only place you have to live"</h2>
+    </div>
+        
+    <div>
+        <p style="padding-top:450px">
+
+        </p>
+    </div>
+        
+
+</body>
+</html>
+
+
+

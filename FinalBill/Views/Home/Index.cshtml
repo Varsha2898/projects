@@ -1,0 +1,108 @@
+﻿@model FinalBill.Models.Doc
+@{ ViewBag.Title = "Index"; }
+<!DOCTYPE html>
+<html>
+<head>
+    <Title>Index</Title>
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <td></td>
+                <td style="text-decoration:none;font-size:30px">Consultation Bill</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.PatientId)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.PatientId)
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Doctors_Name)
+                </td>
+                <td>
+
+
+                    @Html.DropDownListFor(model => model.Doctors_Name, new SelectList(ViewBag.data, "Doctors_Name", "Doctors_Name"), "Select")
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.Doctors_Name)</td>
+            </tr>
+
+            <tr></tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.Specialization)</td>
+                <td>@Html.DropDownList("Specialization", new SelectList(ViewBag.data, "Specialization", "Specialization"), "Select")</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.Specialization)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Avail_Date)</td>
+                <td>@Html.DropDownList("Avail_Date", new SelectList(ViewBag.data, "Avail_Date", "Avail_Date"), "Select")</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.Avail_Date)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Avail_Time)</td>
+                <td>@Html.DropDownList("Avail_Time", new SelectList(ViewBag.data, "Avail_Time", "Avail_Time"), "Select")</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.Avail_Time)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Consult_Fees)</td>
+                <td>@Html.EditorFor(model => model.Consult_Fees)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.Consult_Fees)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn-primary" type="submit" name="name" value="Submit" />
+                    <input class="btn-default" type="reset" name="name" value="Clear" />
+
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    <a style=" cursor: pointer" onclick="location.href='@Url.Action("Index1", "Staff")'">Back to home</a>
+                </td>
+            </tr>
+        </table>}
+
+
+
+    </div>
+
+
+
+</body>
+</html>

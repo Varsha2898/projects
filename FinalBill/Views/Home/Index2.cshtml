@@ -1,0 +1,98 @@
+﻿@model FinalBill.Models.Inpatient
+@{
+    ViewBag.Title = "Index2";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <Title>Inpatient Billing</Title>
+
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Index2", "Home", FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <td></td>
+                <td style="text-decoration:none;font-size:30px">InPatient Billing</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.PatientId)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.PatientId)
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.NoOfDays)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.NoOfDays)
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.NoOfDays)</td>
+            </tr>
+
+            <tr><td><p></p></td></tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.RoomType)</td>
+                <td>@Html.EditorFor(model => model.RoomType)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.RoomType)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.SpecialistVisit)</td>
+                <td>@Html.EditorFor(model => model.SpecialistVisit)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.SpecialistVisit)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Rcharges)</td>
+                <td>@Html.EditorFor(model => model.Rcharges)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.Rcharges)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn-primary" type="submit" name="name" value="Submit" />
+                    <input class="btn-default" type="reset" name="name" value="Clear" />
+
+                </td>
+            </tr>
+        </table>}
+
+
+
+    </div>
+
+
+
+</body>
+</html>
+
+

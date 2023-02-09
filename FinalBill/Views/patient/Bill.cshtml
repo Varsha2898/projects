@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FinalBill.Models.TotBill>
+
+@{
+    ViewBag.Title = "Bill";
+}
+
+<h2>Bill</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConsFees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.serviceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servcost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomCharges)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PharmacyCharges)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalCost)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorsName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsFees)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.serviceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Servcost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomCharges)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PharmacyCharges)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalCost)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.Id })
+
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            <button type="button" onclick="location.href='@Url.Action("Index1", "patient")'" class="btn btn-sm btn-primary">Back</button>
+        </td>
+    </tr>
+
+</table>
+

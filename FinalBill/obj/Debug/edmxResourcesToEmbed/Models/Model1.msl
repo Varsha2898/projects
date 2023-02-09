@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projectModelStoreContainer" CdmEntityContainer="projectEntities2">
+    <EntitySetMapping Name="Docs">
+      <EntityTypeMapping TypeName="projectModel.Doc">
+        <MappingFragment StoreEntitySet="Doc">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="Doctors_Name" ColumnName="Doctors_Name" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="Avail_Date" ColumnName="Avail_Date" />
+          <ScalarProperty Name="Avail_Time" ColumnName="Avail_Time" />
+          <ScalarProperty Name="Consult_Fees" ColumnName="Consult_Fees" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inpatients">
+      <EntityTypeMapping TypeName="projectModel.Inpatient">
+        <MappingFragment StoreEntitySet="Inpatient">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="SpecialistVisit" ColumnName="SpecialistVisit" />
+          <ScalarProperty Name="Rcharges" ColumnName="Rcharges" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pharmacies">
+      <EntityTypeMapping TypeName="projectModel.Pharmacy">
+        <MappingFragment StoreEntitySet="Pharmacy">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="patientId" ColumnName="patientId" />
+          <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="projectModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TotBills">
+      <EntityTypeMapping TypeName="projectModel.TotBill">
+        <MappingFragment StoreEntitySet="TotBill">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+          <ScalarProperty Name="DoctorsName" ColumnName="DoctorsName" />
+          <ScalarProperty Name="ConsFees" ColumnName="ConsFees" />
+          <ScalarProperty Name="serviceName" ColumnName="serviceName" />
+          <ScalarProperty Name="Servcost" ColumnName="Servcost" />
+          <ScalarProperty Name="RoomCharges" ColumnName="RoomCharges" />
+          <ScalarProperty Name="PharmacyCharges" ColumnName="PharmacyCharges" />
+          <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

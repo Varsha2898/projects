@@ -1,0 +1,73 @@
+﻿@model FinalBill.Models.TotBill
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        #login-div {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+            border: 1px solid #ccc;
+            padding: 10px 10px;
+            background-color: aliceblue;
+        }
+
+        .field-validation-error {
+            color: red;
+        }
+
+        body {
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-size: cover;
+            background-color:oldlace;
+        }
+    </style>
+</head>
+<body >
+    <div id="login-div">
+        @using (Html.BeginForm("Details", "Patient", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td></td>
+                    <td style="text-decoration:underline">Patient Login</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model =>model.PatientId)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.PatientId)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.PatientId)</td>
+                </tr>
+
+                
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="name" value="Submit" />
+                       
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href='@Url.Action("Index1", "patient")'>Back To Home</a>
+                    </td>
+                </tr>
+            </table>
+        }
+
+    </div>
+
+</body>
+</html>
+

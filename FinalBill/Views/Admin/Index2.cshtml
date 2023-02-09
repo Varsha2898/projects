@@ -1,0 +1,43 @@
+﻿
+@model IEnumerable<FinalBill.Models.Staff>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+
+                <button type="submit" onclick="location.href='@Url.Action("Reject", "Admin",new { id = item.Id })'" class="btn btn-sm btn-danger">Reject</button>
+                <button type="submit" name="SubmitButton" value="Approve" onclick="location.href='@Url.Action("grant", "Admin",new { id = item.Id })'" class="btn btn-sm btn-success">Approve</button>
+
+            </td>
+        </tr>
+    }
+    <tr><td>
+    <button type="button" name="SubmitButton" value="Approve" onclick="location.href='@Url.Action("Index1", "Admin")'" class="btn btn-sm btn-primary">back</button>
+</td>
+</tr>
+</table>

@@ -1,0 +1,88 @@
+﻿@model FinalBill.Models.Pharmacy
+@{
+    ViewBag.Title = "Index3";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <Title>Pharmacy Billing</Title>
+
+</head>
+<body>
+    <div id="login-div">
+        @using (Html.BeginForm("Index3", "Home", FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <td></td>
+                <td style="text-decoration:none;font-size:30px">Pharmacy Bill</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.patientId)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.patientId)
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.MedicineName)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.MedicineName)
+                </td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.MedicineName)</td>
+            </tr>
+
+            <tr><td><p></p></td></tr>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.quantity)</td>
+                <td>@Html.EditorFor(model => model.quantity)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.quantity)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.cost)</td>
+                <td>@Html.EditorFor(model => model.cost)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.cost)</td>
+            </tr>
+            <tr><td><p></p></td></tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn-primary" type="submit" name="name" value="Submit" />
+                    <input class="btn-default" type="reset" name="name" value="Clear" />
+
+                </td>
+            </tr>
+        </table>}
+
+
+
+    </div>
+
+
+
+</body>
+</html>
+
+

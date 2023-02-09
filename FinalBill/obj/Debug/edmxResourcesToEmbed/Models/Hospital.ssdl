@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Doc">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="Doctors_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Specialization" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Avail_Date" Type="date" Nullable="false" />
+    <Property Name="Avail_Time" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Consult_Fees" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Inpatient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="NoOfDays" Type="int" />
+    <Property Name="RoomType" Type="varchar" MaxLength="50" />
+    <Property Name="SpecialistVisit" Type="varchar" MaxLength="50" />
+    <Property Name="Rcharges" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="login">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Last Name" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="DoB" Type="date" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Contact Number" Type="bigint" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="User Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pharmacy">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="patientId" Type="int" />
+    <Property Name="MedicineName" Type="varchar" MaxLength="50" />
+    <Property Name="quantity" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="cost" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="totalCost" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="ServiceName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dob" Type="date" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ContactNumber" Type="bigint" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="User Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TotBill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientId" Type="int" />
+    <Property Name="DoctorsName" Type="varchar" MaxLength="50" />
+    <Property Name="ConsFees" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="serviceName" Type="varchar" MaxLength="50" />
+    <Property Name="Servcost" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="RoomCharges" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PharmacyCharges" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="totalCost" Type="decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="projectModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doc" EntityType="Self.Doc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inpatient" EntityType="Self.Inpatient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pharmacy" EntityType="Self.Pharmacy" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TotBill" EntityType="Self.TotBill" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

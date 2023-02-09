@@ -1,0 +1,82 @@
+﻿@model FinalBill.Models.TotBill
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorsName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorsName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsFees)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.serviceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.serviceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servcost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servcost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomCharges)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomCharges)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PharmacyCharges)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PharmacyCharges)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalCost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Back to List", "Bill")
+</p>
